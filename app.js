@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to fetch all tasks from the backend
     function fetchTasks() {
-        fetch('http://localhost:3000/tasks')
+        fetch('https://pedalstart-production.up.railway.app/tasks')
             .then(response => response.json())
             .then(tasks => {
                 taskList.innerHTML = ''; // Clear the list before adding tasks
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const newTask = { title, description, dueDate };
 
         // POST request to add a new task
-        fetch('http://localhost:3000/tasks', {
+        fetch('https://pedalstart-production.up.railway.app/tasks', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to delete a task
     window.deleteTask = function(taskId) {
-        fetch(`http://localhost:3000/tasks/${taskId}`, {
+        fetch(`https://pedalstart-production.up.railway.app/tasks/${taskId}`, {
             method: 'DELETE',
         })
             .then(() => {
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const updatedTask = { title, description, dueDate };
 
         // PUT request to update the task
-        fetch(`http://localhost:3000/tasks/${taskId}`, {
+        fetch(`https://pedalstart-production.up.railway.app/tasks/${taskId}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
